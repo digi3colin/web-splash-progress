@@ -1,0 +1,39 @@
+body > header {
+  transition: 1s;
+  opacity: 1;
+}
+
+body[data-progress-ready=false] main {
+  max-height: var(--svh);
+  overflow: hidden;
+}
+body[data-progress-ready=false] > footer {
+  display: none;
+}
+body[data-progress-ready=false] > header {
+  opacity: 0;
+}
+
+#preload-progress {
+  margin-top: 1rem;
+  height: 0.2rem;
+  border-radius: 4px;
+  border: none;
+  overflow: hidden;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.6);
+  transition: 0.25s;
+}
+#preload-progress + label {
+  font-size: 0.75rem;
+}
+#preload-progress::-webkit-progress-value {
+  background: var(--bs-primary);
+  border-radius: 2px;
+}
+#preload-progress[value="100"], #preload-progress[value="100"] + label {
+  opacity: 0;
+}
+
+/*# sourceMappingURL=splash-screen.css.map */

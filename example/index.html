@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Splash Progress Example</title>
+
+    <script type="application/javascript" src="../source/javascript/progress-load.js"></script>
+    <link rel="stylesheet" href="../dist/css/splash-screen.css">
+    <style>:root { --bs-primary : #FF0000;}</style>
+</head>
+<body data-progress-ready="false">
+<header>
+    Top Navigation
+</header>
+<main>
+    <div id="splash-screen">
+        <progress id="preload-progress" max="100" value="100"> Loading... </progress>
+        <label for="preload-progress"></label>
+    </div>
+</main>
+<footer>
+    Copyright 2022
+</footer>
+
+<script type="application/javascript">
+  window.sessionStorage.clear();
+
+  const progressBar = document.getElementById('preload-progress');
+  const progressBarLabel = document.querySelector('#preload-progress+label');
+  const onProgress = (loaded, max) =>{
+    const percent = Math.round( (loaded / max) * 100 );
+    progressBar.setAttribute('value', percent.toString(10));
+  }
+  (async ()=>{
+    progressBarLabel.innerHTML="1/2";
+    await progressLoad('./media/vendors/createjs/tweenjs.min.js', 'script', evt => onProgress(evt.loaded, 26932));
+    progressBarLabel.innerHTML="2/2";
+    await progressLoad('./media/vendors/pixi/pixi.min.js', 'script', evt => onProgress(evt.loaded, 477011));
+    progressBarLabel.innerHTML="done";
+    onProgress(100, 100);
+    document.body.setAttribute('data-progress-ready', 'true');
+  })();
+</script>
+</body>
+</html>

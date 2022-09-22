@@ -1,0 +1,27 @@
+{
+  "name": "web-splash-progress",
+  "version": "1.0.0",
+  "description": "Web splash screen with script and image preloader Progress bar.",
+  "main": "index.js",
+  "scripts": {
+    "babel":  "npx babel source/javascript --out-dir dist/js --source-maps --verbose",
+    "sass":   "npx sass  source/scss:dist/css --source-map",
+    "minify": "npx uglifyjs dist/js/progress-load.js -o dist/js/progress-load.min.js -c -m"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digi3colin/web-splash-progress.git"
+  },
+  "keywords": [
+    "splash",
+    "screen",
+    "progress",
+    "bar"
+  ],
+  "author": "Colin Leung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digi3colin/web-splash-progress/issues"
+  },
+  "homepage": "https://github.com/digi3colin/web-splash-progress#readme"
+}

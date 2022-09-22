@@ -1,0 +1,26 @@
+#preload-progress {
+  margin-top: 1rem;
+  height: 0.2rem;
+  border-radius: 4px;
+  border: none;
+  overflow: hidden;
+
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255,255,255,0.6);
+  transition: 0.25s;
+
+  &+label{
+    font-size: 0.75rem;
+  }
+
+  &::-webkit-progress-value{
+    background: var(--bs-primary);
+    border-radius: 2px;
+  }
+
+  &[value="100"],
+  &[value="100"]+label{
+    opacity: 0;
+  }
+}
