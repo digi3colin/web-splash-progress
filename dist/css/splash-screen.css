@@ -3,14 +3,14 @@ body > header {
   opacity: 1;
 }
 
-body[data-progress-ready=false] main {
+body[data-splash-progress-ready=false] main {
   max-height: var(--svh);
   overflow: hidden;
 }
-body[data-progress-ready=false] > footer {
+body[data-splash-progress-ready=false] > footer {
   display: none;
 }
-body[data-progress-ready=false] > header {
+body[data-splash-progress-ready=false] > header {
   opacity: 0;
 }
 

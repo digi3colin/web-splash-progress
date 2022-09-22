@@ -16,6 +16,11 @@ function progressLoaded(src, type, onLoad, resolve) {
   resolve();
 }
 
+function updateProgressBar(progressBar, loaded, max) {
+  const percent = Math.round(loaded / max * 100);
+  progressBar.setAttribute('value', percent.toString(10));
+}
+
 function progressLoad(src, type = "script", onProgress = () => {}, onLoad = () => {}) {
   return new Promise((resolve, reject) => {
     //guard: script loaded.

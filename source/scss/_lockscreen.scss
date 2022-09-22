@@ -3,7 +3,7 @@ body > header{
   opacity: 1;
 }
 
-body[data-progress-ready="false"]{
+body[data-splash-progress-ready="false"]{
   main{
     max-height: var(--svh);
     overflow: hidden;
