@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web Splash Progress Example</title>
 
-    <script type="application/javascript" src="../source/javascript/progress-load.js"></script>
+    <script type="application/javascript" src="../dist/js/progress-load.min.js"></script>
     <link rel="stylesheet" href="../dist/css/splash-screen.css">
     <style>:root { --bs-primary : #FF0000;}</style>
 </head>
@@ -32,10 +32,12 @@
   const progressBarLabel = document.querySelector('#preload-progress+label');
 
   (async ()=>{
-    progressBarLabel.innerHTML="1/2";
+    progressBarLabel.innerHTML="1/3";
     await progressLoad('./media/vendors/createjs/tweenjs.min.js', 'script', evt => updateProgressBar(progressBar, evt.loaded, 26932));
-    progressBarLabel.innerHTML="2/2";
+    progressBarLabel.innerHTML="2/3";
     await progressLoad('./media/vendors/pixi/pixi.min.js', 'script', evt => updateProgressBar(progressBar, evt.loaded, 477011));
+    progressBarLabel.innerHTML="3/3";
+    await progressLoad('./media/vendors/pdf-js/pdf.min.js', 'script', evt => updateProgressBar(progressBar, evt.loaded, 477011));
     progressBarLabel.innerHTML="done";
     updateProgressBar(progressBar, 100, 100);
     document.body.setAttribute('data-splash-progress-ready', 'true');
